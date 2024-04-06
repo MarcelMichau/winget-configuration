@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+
+properties:
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: office
+      directives:
+        description: Install Microsoft 365 (Office)
+        allowPrerelease: true
+      settings:
+        id: Microsoft.Office
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: steam
+      directives:
+        description: Install Steam
+        allowPrerelease: true
+      settings:
+        id: Valve.Steam
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: spotify
+      directives:
+        description: Install Spotify
+        allowPrerelease: true
+      settings:
+        id: Spotify.Spotify
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: powertoys
+      directives:
+        description: Install PowerToys
+        allowPrerelease: true
+      settings:
+        id: Microsoft.PowerToys
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: 1password
+      directives:
+        description: Install 1Password
+        allowPrerelease: true
+      settings:
+        id: AgileBits.1Password
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: tailscale
+      directives:
+        description: Install Tailscale
+        allowPrerelease: true
+      settings:
+        id: tailscale.tailscale
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: wingetui
+      directives:
+        description: Install WinGetUI
+        allowPrerelease: true
+      settings:
+        id: SomePythonThings.WingetUIStore
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: discord
+      directives:
+        description: Install Discord
+        allowPrerelease: true
+      settings:
+        id: Discord.Discord
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: flux
+      directives:
+        description: Install Flux
+        allowPrerelease: true
+      settings:
+        id: flux.flux
+        source: winget
+  configurationVersion: 0.2.0

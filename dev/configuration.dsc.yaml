@@ -48,20 +48,20 @@ properties:
         id: JanDeDobbeleer.OhMyPosh
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: powertoys
-      directives:
-        description: Install PowerToys
-        allowPrerelease: true
-      settings:
-        id: Microsoft.PowerToys
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: git
       directives:
         description: Install Git
         allowPrerelease: true
       settings:
         id: Git.Git
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: visualstudiocommunity
+      directives:
+        description: Install Visual Studio Community
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VisualStudio.2022.Community.Preview
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vscode
@@ -128,12 +128,12 @@ properties:
         id: Microsoft.Azure.FunctionsCoreTools
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: dotnet7
+      id: dotnet8sdk
       directives:
-        description: Install .NET 7 SDK
+        description: Install .NET 8 SDK
         allowPrerelease: true
       settings:
-        id: Microsoft.DotNet.SDK.7
+        id: Microsoft.DotNet.SDK.8
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: nodejs
@@ -150,5 +150,53 @@ properties:
         allowPrerelease: true
       settings:
         id: CoreyButler.NVMforWindows
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: bun
+      directives:
+        description: Install Bun
+        allowPrerelease: true
+      settings:
+        id: Oven-sh.Bun
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: devtoys
+      directives:
+        description: Install DevToys
+        allowPrerelease: true
+      settings:
+        id: 9PGCV4V3BK4W
+        source: msstore
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: bruno
+      directives:
+        description: Install Bruno
+        allowPrerelease: true
+      settings:
+        id: Bruno.Bruno
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: k9s
+      directives:
+        description: Install k9s
+        allowPrerelease: true
+      settings:
+        id: Derailed.k9s
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: dockerDesktop
+      directives:
+        description: Install Docker Desktop
+        allowPrerelease: true
+      settings:
+        id: Docker.DockerDesktop
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: gitKraken
+      directives:
+        description: Install GitKraken
+        allowPrerelease: true
+      settings:
+        id: Axosoft.GitKraken
         source: winget
   configurationVersion: 0.2.0
