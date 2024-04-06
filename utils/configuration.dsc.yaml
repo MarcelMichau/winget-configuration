@@ -74,4 +74,12 @@ properties:
       settings:
         id: flux.flux
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: logitechGhub
+      directives:
+        description: Install Logitech G HUB
+        allowPrerelease: true
+      settings:
+        id: Logitech.GHUB
+        source: winget
   configurationVersion: 0.2.0
