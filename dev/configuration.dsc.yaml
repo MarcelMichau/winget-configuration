@@ -15,6 +15,29 @@ properties:
         allowPrerelease: true
       settings:
         Ensure: Present
+    - resource: Microsoft.Windows.Developer/ShowSecondsInClock
+      directives:
+        description: Show seconds in clock
+        allowPrerelease: true
+      settings:
+        Ensure: Present
+    - resource: Microsoft.Windows.Developer/WindowsExplorer
+      id: FileExplorerSettings
+      directives:
+        description: File Explorer Settings
+        allowPrerelease: true
+      settings:
+        FileExtensions: Show
+        HiddenFiles: Show
+        RestartExplorer: true
+    - resource: Microsoft.Windows.Developer/EnableDarkMode
+      directives:
+        description: Enable dark mode
+        allowPrerelease: true
+      settings:
+        Ensure: Present
+        # Use caution when setting `RestartExplorer: true` as this will force explorer to close.
+        RestartExplorer: true # Required to apply changes
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: devHome
       directives:
@@ -62,6 +85,27 @@ properties:
         allowPrerelease: true
       settings:
         id: Microsoft.VisualStudio.2022.Community.Preview
+        source: winget
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      id: VSWorkloads
+      dependsOn:
+        - visualstudiocommunity
+      directives:
+        description: Install VS workloads from VSConfig
+        maxVersion: "1.0.15"
+        allowPrerelease: true
+      settings:
+        productId: Microsoft.VisualStudio.Product.Community
+        channelId: VisualStudio.17.Release
+        vsConfigFile: '${WinGetConfigRoot}\.vsconfig'
+        includeRecommended: true
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: jetbrainsToolbox
+      directives:
+        description: Install JetBrains Toolbox
+        allowPrerelease: true
+      settings:
+        id: JetBrains.Toolbox
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vscode
@@ -198,5 +242,53 @@ properties:
         allowPrerelease: true
       settings:
         id: Axosoft.GitKraken
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: chezmoi
+      directives:
+        description: Install chezmoi
+        allowPrerelease: true
+      settings:
+        id: twpayne.chezmoi
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: ripgrep
+      directives:
+        description: Install ripgrep
+        allowPrerelease: true
+      settings:
+        id: BurntSushi.ripgrep.MSVC
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: bat
+      directives:
+        description: Install bat
+        allowPrerelease: true
+      settings:
+        id: sharkdp.bat
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: zoxide
+      directives:
+        description: Install zoxide
+        allowPrerelease: true
+      settings:
+        id: ajeetdsouza.zoxide
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: fzf
+      directives:
+        description: Install fzf
+        allowPrerelease: true
+      settings:
+        id: fzf
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: jq
+      directives:
+        description: Install jq
+        allowPrerelease: true
+      settings:
+        id: jqlang.jq
         source: winget
   configurationVersion: 0.2.0

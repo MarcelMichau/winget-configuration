@@ -51,14 +51,6 @@ properties:
         id: tailscale.tailscale
         source: winget
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: wingetui
-      directives:
-        description: Install WinGetUI
-        allowPrerelease: true
-      settings:
-        id: SomePythonThings.WingetUIStore
-        source: winget
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: discord
       directives:
         description: Install Discord
@@ -81,5 +73,13 @@ properties:
         allowPrerelease: true
       settings:
         id: Logitech.GHUB
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: WizTree
+      directives:
+        description: Install WizTree
+        allowPrerelease: true
+      settings:
+        id: AntibodySoftware.WizTree
         source: winget
   configurationVersion: 0.2.0
